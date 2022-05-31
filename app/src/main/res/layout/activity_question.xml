@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_margin="10dp"
+        android:id="@+id/cardview"
+        app:neumorph_shapeType="basin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/pager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time_left"
+                android:textStyle="bold"
+                android:textColor="#EC0101"
+                android:textSize="34sp"/>
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="#EC0101"
+                android:text="@string/time_sec"
+                android:textSize="34sp"/>
+
+        </LinearLayout>
+    </soup.neumorphism.NeumorphCardView>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/cardview"
+        app:layout_constraintBottom_toTopOf="@id/buttons"/>
+
+
+    <RelativeLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="15dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/btn_previous"
+            style="@style/Widget.Neumorph.Button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/previous"
+            android:textColor="@color/white"
+            app:neumorph_backgroundColor="@color/design_default_color_primary" />
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/btn_next"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Neumorph.Button"
+            app:neumorph_backgroundColor="@color/design_default_color_primary"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/nav_button_bg"
+            android:paddingHorizontal="30dp"
+            android:textColor="@color/white"
+            android:text="@string/next"/>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
